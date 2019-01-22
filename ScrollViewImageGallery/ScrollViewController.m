@@ -11,12 +11,37 @@
 @interface ScrollViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+
+
+
+@property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
+
 @end
+
 
 @implementation ScrollViewController
 
+
+
+
+- (void)imageTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"tapped!!!!!!!");
+    [self performSegueWithIdentifier:@"imageDetailSegue" sender:sender];
+    
+}
+
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   
+    
+    
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
     self.scrollView.delegate = self;
     
@@ -25,19 +50,25 @@
     imageView1.clipsToBounds = YES;
     [self.scrollView addSubview:imageView1];
     imageView1.translatesAutoresizingMaskIntoConstraints = NO;
+    imageView1.userInteractionEnabled = YES;
+    
+    
     
     UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse-night"]];
     imageView2.contentMode = UIViewContentModeScaleAspectFit;
     imageView2.clipsToBounds = YES;
     [self.scrollView addSubview:imageView2];
     imageView2.translatesAutoresizingMaskIntoConstraints = NO;
+    imageView2.userInteractionEnabled = YES;
+    
     
     UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse-zoomed"]];
     imageView3.contentMode = UIViewContentModeScaleAspectFit;
     imageView3.clipsToBounds = YES;
     [self.scrollView addSubview:imageView3];
     imageView3.translatesAutoresizingMaskIntoConstraints = NO;
-
+    imageView3.userInteractionEnabled = YES;
+    
     
    
     
@@ -67,8 +98,37 @@
     [imageView3.widthAnchor constraintEqualToAnchor:self.view.widthAnchor].active = YES;
     
     
-
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
+    
+    
+    [self.scrollView addGestureRecognizer:self.tapGestureRecognizer];
+    
+    
 }
 
+/*
+ - (void)viewDidLoad {
+ [super viewDidLoad];
+ 
+ self.basketImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+ 
+ 
+ 
+ self.pet = [[Pet alloc] initWithName:@"Russell"];
+ 
+ self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(petPanned:)];
+ self.pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(applePinched:)];
+ 
+ 
+ [self.petImage addGestureRecognizer:self.panGesture];
+ [self.appleImage addGestureRecognizer:self.pinchGesture];
+ }
+ 
+ 
+ 
+ - (IBAction)applePinched:(UIPinchGestureRecognizer *)sender {
+ 
+ 
+ */
 
 @end
