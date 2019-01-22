@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZoomViewController : UIViewController
-
+- (void)showDetail:(int)imageNumber;
 @end
 
 NS_ASSUME_NONNULL_END

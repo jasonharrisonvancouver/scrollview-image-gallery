@@ -44,6 +44,10 @@
     
 }
 
+- (void)showDetail:(int)imageNumber{
+    NSLog(@"got image number %d", imageNumber);
+    
+}
 
 
 

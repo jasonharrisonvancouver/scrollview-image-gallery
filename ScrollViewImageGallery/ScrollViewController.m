@@ -7,6 +7,7 @@
 //
 
 #import "ScrollViewController.h"
+#import "ZoomViewController.h"
 
 @interface ScrollViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -23,9 +24,60 @@
 
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITapGestureRecognizer *)sender{
+    
+    ZoomViewController *targetView = segue.destinationViewController;
+    
+    int side = self.scrollView.contentOffset.x / self.scrollView.frame.size.width;
+    [targetView showDetail:side];
+}
+
+
+
+/*
+ // When any of my buttons are pressed, push the next view
+ - (IBAction)buttonPressed:(id)sender
+ {
+ [self performSegueWithIdentifier:@"MySegue" sender:sender];
+ }
+ 
+ // This will get called too before the view appears
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ if ([[segue identifier] isEqualToString:@"MySegue"]) {
+ 
+ // Get destination view
+ SecondView *vc = [segue destinationViewController];
+ 
+ // Get button tag number (or do whatever you need to do here, based on your object
+ NSInteger tagIndex = [(UIButton *)sender tag];
+ 
+ // Pass the information to your destination view
+ [vc setSelectedButton:tagIndex];
+ }
+ }
+ 
+ */
+
 
 - (void)imageTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"tapped!!!!!!!");
+    
+    
+    
+    
+    //NSLog(@"offset", sender.view.subviews[0].)
+    
+    NSLog(@"pressed TAG %ld", sender.view.subviews[0].tag);
+    
+   /* if([sender.view isEqual:self.scrollView.subviews[0]]){
+        NSLog(@"you tapped image 1");
+    }else if([sender.view isEqual:self.scrollView.subviews[1]]){
+        NSLog(@"you tapped image 2");
+    }else {
+        NSLog(@"you tapped image 3");
+    }*/
+    
     [self performSegueWithIdentifier:@"imageDetailSegue" sender:sender];
     
 }
@@ -51,7 +103,7 @@
     [self.scrollView addSubview:imageView1];
     imageView1.translatesAutoresizingMaskIntoConstraints = NO;
     imageView1.userInteractionEnabled = YES;
-    
+    imageView1.tag = 1;
     
     
     UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse-night"]];
@@ -60,7 +112,7 @@
     [self.scrollView addSubview:imageView2];
     imageView2.translatesAutoresizingMaskIntoConstraints = NO;
     imageView2.userInteractionEnabled = YES;
-    
+    imageView2.tag = 2;
     
     UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse-zoomed"]];
     imageView3.contentMode = UIViewContentModeScaleAspectFit;
@@ -68,7 +120,7 @@
     [self.scrollView addSubview:imageView3];
     imageView3.translatesAutoresizingMaskIntoConstraints = NO;
     imageView3.userInteractionEnabled = YES;
-    
+    imageView3.tag = 3;
     
    
     
