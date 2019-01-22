@@ -15,6 +15,7 @@
 		9F54F02421F6801C0025D78A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54F02321F6801C0025D78A /* main.m */; };
 		9F54F02E21F6801C0025D78A /* ScrollViewImageGalleryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54F02D21F6801C0025D78A /* ScrollViewImageGalleryTests.m */; };
 		9F54F03921F6801C0025D78A /* ScrollViewImageGalleryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54F03821F6801C0025D78A /* ScrollViewImageGalleryUITests.m */; };
+		9F54F04821F691F80025D78A /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54F04721F691F80025D78A /* ZoomViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		9F54F03421F6801C0025D78A /* ScrollViewImageGalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollViewImageGalleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F54F03821F6801C0025D78A /* ScrollViewImageGalleryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewImageGalleryUITests.m; sourceTree = "<group>"; };
 		9F54F03A21F6801C0025D78A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F54F04621F691F80025D78A /* ZoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZoomViewController.h; sourceTree = "<group>"; };
+		9F54F04721F691F80025D78A /* ZoomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoomViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				9F54F01521F6801B0025D78A /* AppDelegate.m */,
 				9F54F01721F6801B0025D78A /* ScrollViewController.h */,
 				9F54F01821F6801B0025D78A /* ScrollViewController.m */,
+				9F54F04621F691F80025D78A /* ZoomViewController.h */,
+				9F54F04721F691F80025D78A /* ZoomViewController.m */,
 				9F54F01A21F6801B0025D78A /* Main.storyboard */,
 				9F54F01D21F6801C0025D78A /* Assets.xcassets */,
 				9F54F01F21F6801C0025D78A /* LaunchScreen.storyboard */,
@@ -265,6 +270,7 @@
 				9F54F01921F6801B0025D78A /* ScrollViewController.m in Sources */,
 				9F54F02421F6801C0025D78A /* main.m in Sources */,
 				9F54F01621F6801B0025D78A /* AppDelegate.m in Sources */,
+				9F54F04821F691F80025D78A /* ZoomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
